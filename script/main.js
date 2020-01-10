@@ -44,3 +44,28 @@ function signOut() {
     });
 
 }
+
+// use this when user input the city
+function getWeatherInfo(city) {
+  $.ajax({
+    method: 'get',
+    url: `${BASE_URL}/weather/${city}`
+  })
+    .done((data) => {
+      console.log(`Success`);
+      $('.forecast').empty();
+      data.responseData.weatherInfo.forecast.forEach((element, i) => {
+        if(i === 0) $('.forecast').empty();
+        else {
+          $('.forecast').append(`
+          <div class="day">
+            <p class="name">${element.date}</p>
+            <p class="high-low">${element.temperature.max} / ${element.temperature.min}</p>
+          </div>
+          `)
+        }
+      });
+    })
+    .fail((err) => console.log(err))
+    .always();
+}
