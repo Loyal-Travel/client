@@ -44,6 +44,8 @@ function signOut() {
     });
 
 }
+
+// use this when user input the city
 function getWeatherInfo(city) {
   $.ajax({
     method: 'get',
