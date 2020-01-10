@@ -11,57 +11,80 @@
   
 </head>
 <body>
-    <header class="header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          <img src="img/logoNavbar.png" width="50" height="50" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link navbar-name" href="#">live-travel <span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-     
-        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submi"><a href="#" onclick="signOut();">Sign out</a></button> -->
-        <a href="#" onclick="signOut();">Sign out</a>
+  <!-- navigation component -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="img/logoNavbar.png" width="50" height="50" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link navbar-name" href="#">live-travel <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+ 
+    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submi"><a href="#" onclick="signOut();">Sign out</a></button> -->
+    <a href="#" onclick="signOut();">Sign out</a>         
+    </div>
+  </nav>
+<!-- end of navigation component -->
 
-         
-          
-        </div>
-      </nav>
-
-      <div class="header-middle">
-        <div class="wrapper fadeInDown">
-            <div id="formContent">
-              <!-- Tabs Titles -->
-              <!-- Icon -->
-              <div class="fadeIn first">
-                <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="Please Login" />
-              </div>
-
-              <!-- Login Form -->
-              <form> 
-                <input type="hidden" id="login" class="fadeIn second" name="login" placeholder="login">
-                <input type="hidden" id="password" class="fadeIn third" name="login" placeholder="password">
-                <input type="hidden" class="fadeIn fourth" value="Log In">
-                <div class="google-button mt-5">
-                  <div class="g-signin2 fadeIn second" data-onsuccess="onSignIn">Sign in</div>
-                </div>
-              </form>
-              <!-- Remind Passowrd -->
-              <div id="formFooter">
-                <a class="underlineHover" href="#"></a>
-              </div>
-
+<!-- login header component -->
+  <header class="header">
+    <div class="header-middle">
+      <div class="wrapper fadeInDown">
+          <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+              <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="Please Login" />
             </div>
-        </div>
-    </header>
-    
+
+            <!-- Login Form -->
+            <form> 
+              <input type="hidden" id="login" class="fadeIn second" name="login" placeholder="login">
+              <input type="hidden" id="password" class="fadeIn third" name="login" placeholder="password">
+              <input type="hidden" class="fadeIn fourth" value="Log In">
+              <div class="google-button mt-5">
+                <div class="g-signin2 fadeIn second" data-onsuccess="onSignIn">Sign in</div>
+              </div>
+            </form>
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+              <a class="underlineHover" href="#"></a>
+            </div>
+
+          </div>
+      </div>
+  </header>
+  <!-- end of login header component   -->
+
+  <!-- main component -->
+  <div class="row flex-xl-nowrap mt-4">
+
+    <div class="col-12 col-md-3 col-xl-2 bd-sidebar ml-4">
+
+        <form class="bd-search d-flex align-items-center">
+            <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;">
+                <input type="search" class="form-control ds-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" style="position: relative; vertical-align: top;" dir="auto">
+                <pre aria-hidden="true" class="white-space"></pre>
+            </span>
+        </form>
+
+        <nav id="bd-docs-nav" class="collapse bd-links"></nav>
+
+    </div>
+
+    <main class="container-fluid col-12 col-md-9" role="main" style="background-color: cornflowerblue;">
+
+    </main>
+  </div>
+<!-- end of main component -->
+</body>
   
   <!-- Script -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
