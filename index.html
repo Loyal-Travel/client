@@ -1,110 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="google-signin-client_id" content="957823431220-nk5oogic3jj6th239lvqqejo4nig47g6.apps.googleusercontent.com">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- OAuth -->
+  <meta name="google-signin-client_id"
+    content="957823431220-nk5oogic3jj6th239lvqqejo4nig47g6.apps.googleusercontent.com">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="./style/style.css">
   <title>Loyal Travel</title>
-  
+
 </head>
+
 <body>
+
   <!-- navigation component -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="headerApp" style="display: none;">
     <a class="navbar-brand" href="#">
       <img src="img/logoNavbar.png" width="50" height="50" alt="">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link navbar-name" href="#">live-travel <span class="sr-only">(current)</span></a>
         </li>
       </ul>
- 
-    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submi"><a href="#" onclick="signOut();">Sign out</a></button> -->
-    <a href="#" onclick="signOut();">Sign out</a>         
+      <a href="#" onclick="signOut();">Sign out</a>
     </div>
   </nav>
-<!-- end of navigation component -->
+  <!-- end of navigation component -->
 
-<!-- login header component -->
-  <header class="header">
-    <div class="header-middle">
-      <div class="wrapper fadeInDown">
-          <div id="formContent">
-            <!-- Tabs Titles -->
-            <!-- Icon -->
-            <div class="fadeIn first">
-              <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="Please Login" />
-            </div>
-
-            <!-- Login Form -->
-            <form> 
-              <input type="hidden" id="login" class="fadeIn second" name="login" placeholder="login">
-              <input type="hidden" id="password" class="fadeIn third" name="login" placeholder="password">
-              <input type="hidden" class="fadeIn fourth" value="Log In">
-              <div class="google-button mt-5">
-                <div class="g-signin2 fadeIn second" data-onsuccess="onSignIn">Sign in</div>
-              </div>
-            </form>
-            <!-- Remind Passowrd -->
-            <div id="formFooter">
-              <a class="underlineHover" href="#"></a>
-            </div>
-
-          </div>
+  <!-- Landing Page -->
+  <div class="container-fluid main" id="landingPage">
+    <div id="video1">
+      <video autoplay="autoplay" loop="loop" muted="muted" width="100%;">
+        <source src="./assets/videos/videoplayback.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="covertext">
+      <div class="col-lg-10" style="float:none; margin:0 auto;">
+        <h1 class="title">Loyal Travel</h1>
+        <h3 class="subtitle">Untuk Perjalanan Anda Yang Menyenangkan, Liburan Terencana, & Tempat Wisata</h3>
       </div>
-  </header>
-  <!-- end of login header component   -->
+      <div class="col-xs-12 explore">
+        <a href="#"><button type="button" class="btn btn-lg explorebtn" id="btnLandingPage">Liburan Yuk!</button></a>
+      </div>
+    </div>
+  </div>
+  <!-- End Landing Page -->
+
+  <!-- Login Page -->
+  <div id="login-page" style="display: none;">
+    <div class="login">
+      <p class="login-title">Masuk Menggunakan Google</p>
+      <div class="g-signin2" data-onsuccess="onSignIn">asd</div>
+    </div>
+    <div class="background">
+      <h1>Bingung Mau Kemana? Takut Kondisi Cuaca?</h1>
+      <p>Loyal travel adalah web untuk mencari tempat liburan dan melihat kondisi cuaca di lokasi liburan</p>
+    </div>
+  </div>
+  <!-- End Login Page -->
 
   <!-- main component -->
-  <div class="row flex-xl-nowrap mt-4">
-
-    <div class="col-12 col-md-3 col-xl-2 bd-sidebar ml-4">
-
-        <form class="bd-search d-flex align-items-center">
-            <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;">
-                <input type="search" class="form-control ds-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" style="position: relative; vertical-align: top;" dir="auto">
-                <pre aria-hidden="true" class="white-space"></pre>
-            </span>
-        </form>
-
-        <nav id="bd-docs-nav" class="collapse bd-links"></nav>
+  <div class="container-fluid" id="main-content" style="display: none;">
+    <div class="row">
 
     </div>
+    <div class="row">
+      <div class="container col-md-2">
+        <p>search</p>
+      </div>
+      <div class="container col-md-10">
+        isi
+      </div>
+    </div>
 
-    <main class="container-fluid col-12 col-md-9" role="main" style="background-color: cornflowerblue;">
-
-    </main>
   </div>
-<!-- end of main component -->
-</body>
-  
+  <!-- end of main component -->
+
   <!-- Script -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous">
-  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous">
-  </script>
+    crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous">
-  </script>
-  
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
   <script src="./script/main.js"></script>
 </body>
+
 </html>

@@ -1,25 +1,25 @@
 const BASE_URL = 'http://localhost:3000'
 
-$(document).ready(function() {
-  console.log('ready!')
-  $(".header").hide();
-  $('#main-content').hide();
-  $('#signOut').hide()
+$(document).ready(function () {
   checkLogin()
-
-  
+  $("#btnLandingPage").on("click", function (e) {
+    e.preventDefault()
+    $("#landingPage").hide()
+    $("#login-page").show()
+  })
 })
 
 function checkLogin() {
-  
-  if(localStorage.getItem("name") == null){
+  if (localStorage.getItem("name") == null) {
     // console.log(localStorage.getItem("Name"))
-    console.log('tes')
+    // console.log('tes')
     $('#main-content').hide();
-    $(".header").show();
+    $("#headerApp").hide();
     $('#signOut').hide()
   } else {
-    $(".header").hide();
+    $("#login-page").hide()
+    $("#landingPage").hide()
+    $("#headerApp").show();
     $('#main-content').show();
     $('#signOut').show()
   }
@@ -33,14 +33,15 @@ function onSignIn(googleUser) {
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.'
   localStorage.setItem("name", profile.getName())
   checkLogin()
-
 }
+
 function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-      localStorage.clear()
-      checkLogin()
-    });
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+    console.log('User signed out.');
+    localStorage.clear()
+    checkLogin()
+    $("#landingPage").show()
+  });
 
 }
